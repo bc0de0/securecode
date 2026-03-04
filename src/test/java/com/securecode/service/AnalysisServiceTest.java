@@ -4,8 +4,6 @@ import com.securecode.dto.AnalysisRequestDTO;
 import com.securecode.dto.AnalysisResultDTO;
 import com.securecode.dto.FindingDTO;
 import com.securecode.model.AnalysisRequest;
-import com.securecode.model.AnalysisResult;
-import com.securecode.model.Finding;
 import com.securecode.model.Project;
 import com.securecode.model.enums.AnalysisStatus;
 import com.securecode.model.enums.AnalysisType;

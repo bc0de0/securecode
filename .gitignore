@@ -34,6 +34,15 @@ build/
 Thumbs.db
 .history/
 
+# Environment and Secrets
+.env
+.env.*
+run_app.ps1
+*.key
+*.pem
+credentials.yaml
+secrets.yaml
+
 # Build Logs and Temporary Outputs
 *.log
 *_output.txt

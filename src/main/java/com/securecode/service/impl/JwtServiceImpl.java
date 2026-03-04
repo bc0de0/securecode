@@ -6,7 +6,6 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
 import java.security.KeyFactory;
@@ -40,6 +39,7 @@ public class JwtServiceImpl implements JwtService {
     private PrivateKey loadPrivateKey(String key) throws Exception {
         String cleanKey = key.replace("-----BEGIN PRIVATE KEY-----", "")
                 .replace("-----END PRIVATE KEY-----", "")
+                .replace("\\n", "")
                 .replaceAll("\\s", "");
         byte[] encoded = Base64.getDecoder().decode(cleanKey);
         PKCS8EncodedKeySpec keySpec = new PKCS8EncodedKeySpec(encoded);
@@ -49,6 +49,7 @@ public class JwtServiceImpl implements JwtService {
     private PublicKey loadPublicKey(String key) throws Exception {
         String cleanKey = key.replace("-----BEGIN PUBLIC KEY-----", "")
                 .replace("-----END PUBLIC KEY-----", "")
+                .replace("\\n", "")
                 .replaceAll("\\s", "");
         byte[] encoded = Base64.getDecoder().decode(cleanKey);
         X509EncodedKeySpec keySpec = new X509EncodedKeySpec(encoded);

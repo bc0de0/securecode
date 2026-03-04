@@ -1,6 +1,5 @@
 package com.securecode.model;
 
-import com.securecode.model.Tenant;
 import jakarta.persistence.*;
 import lombok.*;
 import java.time.LocalDateTime;
